@@ -1,0 +1,1 @@
+here is a basic blackjack game which can be run from the console. the first is pure javascript and the other is ruby.
