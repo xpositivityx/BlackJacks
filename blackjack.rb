@@ -46,9 +46,9 @@ end
 
 class Hand
 	def initialize
-	@cards = Array.new
-	@cards[0] = Card.new
-	@cards[1] = Card.new
+		@cards = Array.new
+		@cards[0] = Card.new
+		@cards[1] = Card.new
 	end
 
 	def sum
@@ -139,7 +139,7 @@ class Dealer
 		return @dealer.read_it_dealer
 	end
 
-	def blackjack
+	def blackjack?
 		return @dealer.is_blackjack?
 	end
 end
@@ -188,11 +188,13 @@ class Play
 
 		x = @d.play
 		puts "#{@d.show}"
-		if @d.blackjack? == true
 
-		y = @u.play
+		if 
+			@d.blackjack? != true
+			y = @u.play
+			self.result(x,y)
+		end
 
-		self.result(x,y)
 	end
 
 	def result(x,y)
@@ -230,5 +232,3 @@ end
 
 game = Play.new
 game.game
-
-
